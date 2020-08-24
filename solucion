@@ -1,0 +1,99 @@
+import  tkinter
+
+def suma():
+    suma=float(calificacion1.get())+float(calificacion2.get())+float(calificacion3.get())/3
+    return var.set(suma)
+
+def mult():
+    mult=float(promedio.get())*0.55
+    return let.set(mult)
+
+def mul():
+    mul = float(examenf.get()) * 0.30
+    return ex.set(mul)
+
+def multi():
+    multi=float(trabajofi.get()) * 0.15
+    return tf.set(multi)
+
+def sumar():
+    sumar=float(promedio.get())+float(examenf.get())+float(trabajofi.get())
+    return calf.set(sumar)
+
+def cerrar():
+    ventana.destroy()
+
+ventana=tkinter.Tk()
+ventana.geometry("600x700")
+ventana.title("Promedio")
+ventana.configure(background='dark turquoise')
+var=tkinter.DoubleVar()
+let=tkinter.DoubleVar()
+ex=tkinter.DoubleVar()
+tf=tkinter.DoubleVar()
+calf=tkinter.DoubleVar()
+
+cal1=tkinter.Label(ventana,text="Calificación 1: ", bg="pink",fg="white", padx=15)
+cal1.pack()
+calificacion1=tkinter.Entry(ventana)
+calificacion1.pack()
+
+cal2=tkinter.Label(ventana,text="Calificación 2: ", bg="pink",fg="white",padx=15)
+cal2.pack()
+calificacion2=tkinter.Entry(ventana)
+calificacion2.pack()
+
+cal3=tkinter.Label(ventana,text="Calificación 3: ", bg="pink",fg="white",padx=15)
+cal3.pack()
+calificacion3=tkinter.Entry(ventana)
+calificacion3.pack()
+
+btnsuma=tkinter.Button(ventana, text="Promedio",bg= "black",fg="blue",command=suma, padx=15)
+btnsuma.pack()
+
+resul=tkinter.Label(ventana,bg="plum",textvariable=var)
+resul.pack()
+
+prom=tkinter.Label(ventana,text="Porcentaje parcial: " , bg="pink",fg="white",padx=15)
+prom.pack()
+promedio=tkinter.Entry(ventana)
+promedio.pack()
+
+btnmult=tkinter.Button(ventana, text="Porcentaje", bg= "black", fg="blue",command=mult, padx=15)
+btnmult.pack()
+
+res=tkinter.Label(ventana,bg="plum",textvariable=let)
+res.pack()
+
+efi=tkinter.Label(ventana,text="CalificaciónExámen final: ", bg="pink",fg="white", padx=15)
+efi.pack()
+examenf=tkinter.Entry(ventana)
+examenf.pack()
+
+btnmul=tkinter.Button(ventana, text="Porcentaje EF", bg= "black", fg="blue",command=mul, padx=15)
+btnmul.pack()
+
+resp=tkinter.Label(ventana,bg="plum",textvariable=ex)
+resp.pack()
+
+tfi=tkinter.Label(ventana,text="Calificación Trabajo Final: " , bg="pink",fg="white",padx=15)
+tfi.pack()
+trabajofi=tkinter.Entry(ventana)
+trabajofi.pack()
+
+btnsumar=tkinter.Button(ventana, text="Porcentaje TF", bg= "black", fg="blue",command=multi, padx=15)
+btnsumar.pack()
+
+respu=tkinter.Label(ventana,bg="plum",textvariable=tf)
+respu.pack()
+
+btncalf=tkinter.Button(ventana, text="Calificación Final", bg= "black", fg="blue",command=calf, padx=10)
+btncalf.pack()
+
+re=tkinter.Label(ventana,bg="plum",textvariable=calf)
+re.pack()
+
+btncierra=tkinter.Button(ventana, text="Cerrar", bg= "black", fg="blue",command=cerrar, padx=25)
+btncierra.pack()
+
+ventana.mainloop()
